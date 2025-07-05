@@ -62,3 +62,9 @@ bash
 Copy
 Edit
 streamlit run app.py
+🙋‍♀️ Author
+Sanjana Jain
+📍 B.Tech (Data Science), AKTU
+🔗 LinkedIn:https://www.linkedin.com/in/sanjana-jain-a55927298
+📧 sanjanajain206@gmail.com
+

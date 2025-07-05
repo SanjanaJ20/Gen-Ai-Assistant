@@ -32,18 +32,18 @@ It allows users to upload research documents (PDF or TXT), extract text, generat
 
 genai-assistant/
 │
-├── app.py # Main Streamlit app
-├── requirements.txt # Required packages
-├── .env # Optional: for API keys
-├── README.md # This file
+├── app.py
+├── requirements.txt
+├── .env
+├── README.md
+├── .streamlit/
+│   └── config.toml         ✅ NEW (to lock Python version)
 └── utils/
-├── parser.py # PDF text extraction
-├── summarizer.py # Summarization logic
-└── qa_engine.py # Q&A and MCQ logic
+    ├── parser.py
+    ├── summarizer.py
+    └── qa_engine.py
 
-yaml
-Copy
-Edit
+
 
 ---
 

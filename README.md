@@ -74,6 +74,13 @@ streamlit run app.py
 env
 Copy
 Edit
+## 🧠 Built With
+
+- [Streamlit](https://streamlit.io/)
+- [OpenAI API](https://platform.openai.com/)
+- [Hugging Face Transformers](https://huggingface.co/transformers/)
+- [PyMuPDF](https://pymupdf.readthedocs.io/en/latest/)
+
 OPENAI_API_KEY=your-openai-key-here
 🙋‍♀️ Author
 Sanjana Jain

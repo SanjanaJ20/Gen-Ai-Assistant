@@ -9,9 +9,10 @@ It allows users to upload research documents (PDF or TXT), extract text, generat
 
 ✅ Upload PDF or TXT documents  
 ✅ Extract clean text using PyMuPDF  
-✅ Auto-summarize with transformers  
+✅ Auto-summarize with Hugging Face Transformers  
 ✅ Ask document-based questions  
 ✅ Generate 3 MCQs with 4 options each  
+✅ Shows fallback MCQs if model output fails  
 ✅ Clean UI with modern styling  
 ✅ Runs locally — no OpenAI needed  
 
@@ -19,7 +20,7 @@ It allows users to upload research documents (PDF or TXT), extract text, generat
 
 ## 🛠 Tech Stack
 
-- Python 3.9+
+- Python 3.9+ (tested with 3.10)
 - Streamlit
 - Hugging Face Transformers
 - PyMuPDF (`fitz`)
@@ -31,59 +32,76 @@ It allows users to upload research documents (PDF or TXT), extract text, generat
 ## 📁 Folder Structure
 
 genai-assistant/
-│
 ├── app.py
 ├── requirements.txt
 ├── .env
 ├── README.md
 ├── .streamlit/
-│   └── config.toml         ✅ NEW (to lock Python version)
+│ └── config.toml # Optional: lock Python version
 └── utils/
-    ├── parser.py
-    ├── summarizer.py
-    └── qa_engine.py
+├── parser.py
+├── summarizer.py
+└── qa_engine.py
 
-
+yaml
+Copy
+Edit
 
 ---
 
-## 🔧 How to Run
+## 🔧 How to Run Locally
 
-### 1. Clone or Download
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/SanjanaJ20/genai-assistant.git
 cd genai-assistant
-2. Create and Activate Virtual Environment (Windows)
+2. Create and Activate a Virtual Environment
 bash
 Copy
 Edit
 python -m venv venv
-venv\Scripts\activate
-3. Install Dependencies
+venv\Scripts\activate   # On Windows
+✅ Recommended: Use Python 3.10
+⚠️ Not compatible with Python 3.13 (build issue with sentencepiece)
+
+3. Install Requirements
 bash
 Copy
 Edit
 pip install -r requirements.txt
-4. Run the Streamlit App
+4. Run the App
 bash
 Copy
 Edit
 streamlit run app.py
-📝 Optional: .env File (For OpenAI Key)
+📦 Deployment Notes
+⚠️ This app is currently not deployed on Streamlit Cloud due to sentencepiece build failures in Python 3.13 (Streamlit's default version).
+✅ It works perfectly on local machines with Python 3.10.
+
+📂 Optional: .env File (for OpenAI API)
+If you want to enable OpenAI-based summarization or question answering:
+
+Create a .env file:
+
 env
 Copy
 Edit
-## 🧠 Built With
-
-- [Streamlit](https://streamlit.io/)
-- [OpenAI API](https://platform.openai.com/)
-- [Hugging Face Transformers](https://huggingface.co/transformers/)
-- [PyMuPDF](https://pymupdf.readthedocs.io/en/latest/)
-
 OPENAI_API_KEY=your-openai-key-here
+🧠 Built With
+Streamlit
+
+Hugging Face Transformers
+
+PyMuPDF
+
+SentencePiece
+
 🙋‍♀️ Author
 Sanjana Jain
 📍 B.Tech (Data Science), AKTU
 🔗 LinkedIn:https://www.linkedin.com/in/sanjana-jain-a55927298
 📧 sanjanajain206@gmail.com
+🏁 Final Notes
+This project was developed as part of an internship assignment for EZ Labs, Gurugram.
+It demonstrates real-world skills in GenAI, document processing, and question generation with fallback handling for robustness.
